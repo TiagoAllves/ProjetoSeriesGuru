@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Cadastro";
+}
+
+<h2>Cadastrar Exercicios</h2>
+
+<div>
+    Nome:
+    <input type="text" name="Nome" id="Nome" />
+    <br>
+    Titulo:
+    <input type="text" name="Titulo" id="Titulo" />
+    <br>
+    Url:
+    <input type="text" name="Url" id="Url" />
+    <br>
+    Agrupamento: 
+    <select id="Agrupamento">
+        <option value="">Selecione...</option>
+        <option value="1">Braço</option>
+        <option value="2">Perna</option>
+    </select>
+    <br>
+</div>
+<input type="submit" onclick="Cadastrar();" name="Cadastrar" id="Cadastrar" value="Cadastrar" />
+
+<input type="submit" name="Cancelar" id="Cancelar" onclick="LimparCampos();" value="Cancelar" />
+<script type="text/javascript">
+
+    function Cadastrar() {
+        $.ajax({
+            data: { nome: $("#Nome").val(),titulo: $("#Titulo").val(),url: $("#Url").val() },
+            url: "/Exercicios/Cadastrar",
+            type: "POST"
+        });
+    }
+    
+    function LimparCampos() {
+
+        $("#Nome").val("");
+        $("#Titulo").val("");
+        $("#Url").val("");
+        $("#Agrupamento").val("");
+
+    }
+</script>

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoSeriesGuru.Domain", "ProjetoSeriesGuru\ProjetoSeriesGuru.Domain.csproj", "{50A74637-2FA9-49C2-B8F3-F24E42FD82D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoSeriesGuru.Test", "ProjetoSeriesGuru.Test\ProjetoSeriesGuru.Test.csproj", "{677FEABE-6648-45B7-8028-62ED76CA2599}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoSeriesGuru.Web", "ProjetoSeriesGuru.Web\ProjetoSeriesGuru.Web.csproj", "{5403CCD8-70C4-48EA-BD06-213AC6B6C3F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50A74637-2FA9-49C2-B8F3-F24E42FD82D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50A74637-2FA9-49C2-B8F3-F24E42FD82D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50A74637-2FA9-49C2-B8F3-F24E42FD82D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50A74637-2FA9-49C2-B8F3-F24E42FD82D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{677FEABE-6648-45B7-8028-62ED76CA2599}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{677FEABE-6648-45B7-8028-62ED76CA2599}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{677FEABE-6648-45B7-8028-62ED76CA2599}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{677FEABE-6648-45B7-8028-62ED76CA2599}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5403CCD8-70C4-48EA-BD06-213AC6B6C3F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5403CCD8-70C4-48EA-BD06-213AC6B6C3F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5403CCD8-70C4-48EA-BD06-213AC6B6C3F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5403CCD8-70C4-48EA-BD06-213AC6B6C3F7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
