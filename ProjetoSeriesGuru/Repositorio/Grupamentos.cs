@@ -10,13 +10,13 @@ namespace ProjetoSeriesGuru.Repositorio
 {
     public class Grupamentos :RepositorioBase
     {
-        public void Salvar(Grupamento agrupamento)
+        public void Salvar(Grupamento grupamento)
         {
-            base.Save(agrupamento);
+            base.Save(grupamento);
         }
-        public void Apagar(Grupamento agrupamento)
+        public void Apagar(Grupamento grupamento)
         {
-            base.Delete(agrupamento);
+            base.Delete(grupamento);
         }
         public IList<Grupamentos>Todas()
         {

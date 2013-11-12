@@ -30,7 +30,7 @@ namespace ProjetoSeriesGuru.Test
                 var exercicio = new Exercicio
                 {
                     Nome = "Squat" + i,
-
+                    Link = link
                 };
                 var repositorio = new Exercicios();
                 repositorio.Salvar(exercicio);
