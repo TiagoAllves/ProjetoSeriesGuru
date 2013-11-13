@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ProjetoSeriesGuru.Web.Models
 {
-    public class Grupamento
+    public class GrupamentoModel
     {
         public string Nome { get; set; }
     }

@@ -6,9 +6,11 @@ using ProjetoSeriesGuru.Entidades;
 
 namespace ProjetoSeriesGuru.Web.Models
 {
-    public class Exercicio
+    public class ExercicioModel
     {
         public string Nome { get; set; }
-        public Link Link { get; set; } 
+        public string Url { get; set; }
+        public string Titulo { get; set; }
+        public string Grupamento { get; set; } 
     }
 }

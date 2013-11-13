@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Cadastro";
 }
 
@@ -29,7 +30,7 @@
 
     function Cadastrar() {
         $.ajax({
-            data: { nome: $("#Nome").val(),titulo: $("#Titulo").val(),url: $("#Url").val() },
+            data: { nome: $("#Nome").val(), titulo: $("#Titulo").val(), url: $("#Url").val(), Grupamento: $("#Grupamento").val() },
             url: "/Exercicios/Cadastrar",
             type: "POST"
         });

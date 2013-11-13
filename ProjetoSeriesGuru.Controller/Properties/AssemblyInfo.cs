@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("OBanco")]
+[assembly: AssemblyTitle("ProjetoSeriesGuru.Controller")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("OBanco")]
+[assembly: AssemblyProduct("ProjetoSeriesGuru.Controller")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("b736856c-e458-4f24-a57a-56e1ca205d03")]
+[assembly: Guid("6a4201fc-9f11-4dd5-a485-b5c401d988a1")]
 
 // Version information for an assembly consists of the following four values:
 //

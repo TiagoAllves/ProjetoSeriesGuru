@@ -22,9 +22,9 @@ namespace ProjetoSeriesGuru.Repositorio
         {
             return base.All<Grupamentos>();
         }
-        public Grupamentos Obter(int id)
+        public Grupamento Obter(int id)
         {
-            return base.Get<Grupamentos>(id);
+            return base.Get<Grupamento>(id);
         }
         public IList<Grupamento> ObterPor(string nome)
         {
