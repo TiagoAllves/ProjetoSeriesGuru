@@ -24,7 +24,7 @@ namespace ProjetoSeriesGuru.Repositorio
         }
         public Grupamento Obter(int id)
         {
-            return base.Get<Grupamento>(id);
+            return base.Get<Grupamento>(id);         
         }
         public IList<Grupamento> ObterPor(string nome)
         {

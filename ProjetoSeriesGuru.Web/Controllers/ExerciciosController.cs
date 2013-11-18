@@ -34,7 +34,7 @@ namespace ProjetoSeriesGuru.Web.Controllers
           
 
             controller.Cadastrar(exercicioDomain);
-            return View();
+            return View("Index");
         }
     }
 }

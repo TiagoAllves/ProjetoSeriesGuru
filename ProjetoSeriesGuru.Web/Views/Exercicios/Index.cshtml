@@ -5,35 +5,62 @@
 
 <h2>Cadastrar Exercicios</h2>
 
-<div >
-    Nome:
-    <input type="text" name="Nome" id="Nome" />
-    <br>
-    Titulo:
-    <input type="text" name="Titulo" id="Titulo" />
-    <br>
-    Url:
-    <input type="text" name="Url" id="Url" />
-    <br>
-    Grupamento: 
-    <select id="Grupamento">
-        <option value="">Selecione...</option>
-        <option value="1">Braço</option>
-        <option value="2">Perna</option>
-    </select>
-    <br>
-</div>
-<input type="submit" onclick="Cadastrar();" name="Cadastrar" id="Cadastrar" value="Cadastrar" />
+    <div  >
+        Nome:
+        <input type="text" name="Nome" id="Nome" />
+        <br>
+        Titulo:
+        <input type="text" name="Titulo" id="Titulo" />
+        <br>
+        Url:
+        <input type="text" name="Url" id="Url" />
+        <br>
+        Grupamento: 
+        <select id="Grupamento">
+            <option value="">Selecione...</option>
+            <option value="1">Braço</option>
+            <option value="2">Perna</option>
+        
+        </select>
+        <br>
+    </div>
+<input type="submit" onclick="Cadastrar();"name="Cadastrar" id="Cadastrar" value="Cadastrar" />
 
-<input type="submit" name="Cancelar" id="Cancelar" onclick="LimparCampos();" value="Cancelar" />
-<script type="text/javascript">
+    <input type="submit" name="Cancelar" id="Cancelar" onclick="LimparCampos();" value="Cancelar" />
 
-    function Cadastrar() {
+    <script type="text/javascript">
+
+        function validarCampo()
+        {
+            if ($("#Grupamento").val() == "")
+            {
+                alert("O Campo Grupamento é obrigatório!");
+                return false;
+            }
+            else
+                return true;
+        }
+
+        function Cadastrar() {
+            if (!validarCampo())
+                return false;
+            
         $.ajax({
-            data: { nome: $("#Nome").val(), titulo: $("#Titulo").val(), url: $("#Url").val(), Grupamento: $("#Grupamento").val() },
+            data: {
+                nome: $("#Nome").val(), titulo: $("#Titulo").val(), url: $("#Url").val(),
+                Grupamento: $("#Grupamento").val()
+                
+            },
             url: "/Exercicios/Cadastrar",
-            type: "POST"
+            type: "POST",
+            success: function (obj) {
+                alert("Sucesso.");
+            },
+            error: function (e, jxr) {
+                alert("Erro.");
+            }
         });
+            
     }
     
     function LimparCampos() {
@@ -45,3 +72,4 @@
 
     }
 </script>
+    
