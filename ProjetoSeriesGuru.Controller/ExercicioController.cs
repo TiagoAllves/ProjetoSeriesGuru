@@ -14,7 +14,11 @@ namespace ProjetoSeriesGuru.Controllers
        {
            var repositorio = new Exercicios();
            repositorio.Salvar(exercicio);
-        
        }
+       //public void Buscar(Grupamento grupamento)
+       //{
+       //    var repositorio = new Grupamentos();
+       //    repositorio.Obter(grupamento);
+       //}          
     }
 }

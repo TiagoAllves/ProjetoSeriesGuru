@@ -32,5 +32,11 @@ namespace ProjetoSeriesGuru.Repositorio
             criterio.Add(Restrictions.Like("Nome", nome));
             return criterio.List<Exercicio>();
         }
+        public List<Exercicio> ObterPor(Grupamento grupamento)
+        {
+            var criterio = Session.CreateCriteria<Exercicio>();
+            criterio.Add(Restrictions.Eq("Grupamento", grupamento));
+            return criterio.List<Exercicio>().ToList();
+        }
     }
 }

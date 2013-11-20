@@ -1,0 +1,58 @@
+﻿@model ProjetoSeriesGuru.Web.Models.FiltrarExerciciosModel
+@{
+    ViewBag.Title = "Index";
+}
+<div id="DocumentoFiltro">
+    <h2>Index</h2>
+
+    Grupamento: 
+        <select id="Grupamento">
+            <option value="">Selecione...</option>
+            <option value="1">Braço</option>
+            <option value="2">Perna</option>
+        </select>
+
+    <input type="submit" onclick="Buscar();" name="Filtrar" id="Filtrar" value="Filtrar" />
+
+    <table>
+        <tr>
+            <td>Grupamento </td>
+            <td>Nome </td>
+            <td>Url </td>
+        </tr>
+        @if (Model != null && Model.Exercicios != null && Model.Exercicios.Count > 0)
+        {
+            foreach (var exercicio in Model.Exercicios)
+            {
+            <tr>
+                <td>@exercicio.Grupamento</td>
+                <td>@exercicio.Nome</td>
+                <td>@exercicio.Url</td>
+            </tr>
+            }
+        }
+        else
+        {   
+            <tr>
+                <td>Sem resultados</td>
+                <td></td>
+                <td></td>
+            </tr>
+        }
+    </table>
+</div>
+<script type="text/javascript">
+
+
+    function Buscar() {
+        $.ajax({
+            data: { IdGrupamento: $("#Grupamento").val() },
+            url: "/ListarExercicios/Buscar",
+            type: "POST"
+
+        }).done(function (html) {
+            $("#DocumentoFiltro").replaceWith(html);
+        });
+    }
+</script>
+'

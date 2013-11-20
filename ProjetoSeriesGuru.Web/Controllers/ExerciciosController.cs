@@ -30,9 +30,6 @@ namespace ProjetoSeriesGuru.Web.Controllers
             exercicioDomain.Link.Url = exercicioModel.Url;
             exercicioDomain.Link.Titulo = exercicioModel.Titulo;
 
-            
-          
-
             controller.Cadastrar(exercicioDomain);
             return View("Index");
         }

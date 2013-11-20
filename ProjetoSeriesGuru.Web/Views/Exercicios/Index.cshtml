@@ -4,8 +4,7 @@
 }
 
 <h2>Cadastrar Exercicios</h2>
-
-    <div  >
+    <div>
         Nome:
         <input type="text" name="Nome" id="Nome" />
         <br>
@@ -19,8 +18,7 @@
         <select id="Grupamento">
             <option value="">Selecione...</option>
             <option value="1">Braço</option>
-            <option value="2">Perna</option>
-        
+            <option value="2">Perna</option>     
         </select>
         <br>
     </div>
@@ -54,7 +52,7 @@
             url: "/Exercicios/Cadastrar",
             type: "POST",
             success: function (obj) {
-                alert("Sucesso.");
+                alert("Cadastrado efetuado com sucesso.");
             },
             error: function (e, jxr) {
                 alert("Erro.");

@@ -8,7 +8,7 @@ using ProjetoSeriesGuru.Entidades;
 
 namespace ProjetoSeriesGuru.Repositorio
 {
-    public class Grupamentos :RepositorioBase
+    public class Grupamentos : RepositorioBase
     {
         public void Salvar(Grupamento grupamento)
         {
