@@ -67,7 +67,7 @@ namespace ProjetoSeriesGuru.Web.Controllers
                                           });
             }
 
-            return View("Index", filtro);
+            return PartialView("_Exercicios", filtro);
         }
     }
 }

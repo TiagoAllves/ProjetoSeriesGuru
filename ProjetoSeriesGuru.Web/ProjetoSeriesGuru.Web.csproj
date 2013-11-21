@@ -288,6 +288,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Exercicios\Index.cshtml" />
     <Content Include="Views\LIstarExercicios\Index.cshtml" />
+    <Content Include="Views\LIstarExercicios\_Exercicios.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -29,7 +29,7 @@
 </div>
 <input type="submit" onclick="Cadastrar();" name="Cadastrar" id="Cadastrar" value="Cadastrar" />
 
-<input type="submit" name="Cancelar" id="Cancelar" onclick="LimparCampos();" value="Cancelar" />
+<input type="submit" name="Limpar" id="Limpar" onclick="LimparCampos();" value="Limpar" />
 
 <script type="text/javascript">
 
@@ -56,6 +56,7 @@
             type: "POST",
             success: function (obj) {
                 alert("Cadastrado efetuado com sucesso.");
+                LimparCampos();
             },
             error: function (e, jxr) {
                 alert("Erro.");
