@@ -26,7 +26,7 @@
         @if (Model != null && Model.Exercicios != null && Model.Exercicios.Count > 0)
         {
             <tr>
-                <td>Grupamento </td>
+                <td>Titulo </td>
                 <td>Nome </td>
                 <td>Url </td>
             </tr>
@@ -34,7 +34,7 @@
             foreach (var exercicio in Model.Exercicios)
             {
                 <tr>
-                    <td>@exercicio.Grupamento</td>
+                    <td>@exercicio.Titulo</td>
                     <td>@exercicio.Nome</td>
                     <td>@exercicio.Url</td>
                 </tr>

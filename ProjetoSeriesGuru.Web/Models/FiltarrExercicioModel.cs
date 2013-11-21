@@ -11,7 +11,7 @@ namespace ProjetoSeriesGuru.Web.Models
     {
         public int IdGrupamento { get; set; }
         public string Nome { get; set; }
-        public int Grupamento { get; set; }
+        public int Titulo { get; set; }
         public string Url { get; set; }
     }
 
