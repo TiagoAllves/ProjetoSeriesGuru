@@ -18,9 +18,9 @@ namespace ProjetoSeriesGuru.Repositorio
         {
             base.Delete(grupamento);
         }
-        public IList<Grupamentos>Todas()
+        public IList<Grupamento> Todas()
         {
-            return base.All<Grupamentos>();
+            return base.All<Grupamento>();
         }
         public Grupamento Obter(int id)
         {

@@ -1,34 +1,43 @@
-﻿@model ProjetoSeriesGuru.Web.Models.FiltrarExerciciosModel
+﻿@using ProjetoSeriesGuru.Entidades
+@model ProjetoSeriesGuru.Web.Models.FiltrarExerciciosModel
 @{
     ViewBag.Title = "Index";
 }
 <div id="DocumentoFiltro">
     <h2>Index</h2>
 
-    Grupamento: 
-        <select id="Grupamento">
-            <option value="">Selecione...</option>
-            <option value="1">Braço</option>
-            <option value="2">Perna</option>
-        </select>
-
     <input type="submit" onclick="Buscar();" name="Filtrar" id="Filtrar" value="Filtrar" />
 
+
+    Grupamento: 
+    <select id="Grupamento">
+        <option value="" selected>Selecione...</option>
+
+        @if (Model != null && Model.TodosGrupamentos != null && Model.TodosGrupamentos.Any())
+        {
+            foreach (var grupamento in Model.TodosGrupamentos)
+            {
+                <option value=@grupamento.Id>@grupamento.Nome</option>
+            } 
+        }
+    </select>
+
     <table>
-        <tr>
-            <td>Grupamento </td>
-            <td>Nome </td>
-            <td>Url </td>
-        </tr>
         @if (Model != null && Model.Exercicios != null && Model.Exercicios.Count > 0)
         {
+            <tr>
+                <td>Grupamento </td>
+                <td>Nome </td>
+                <td>Url </td>
+            </tr>
+      
             foreach (var exercicio in Model.Exercicios)
             {
-            <tr>
-                <td>@exercicio.Grupamento</td>
-                <td>@exercicio.Nome</td>
-                <td>@exercicio.Url</td>
-            </tr>
+                <tr>
+                    <td>@exercicio.Grupamento</td>
+                    <td>@exercicio.Nome</td>
+                    <td>@exercicio.Url</td>
+                </tr>
             }
         }
         else
@@ -40,9 +49,10 @@
             </tr>
         }
     </table>
-</div>
-<script type="text/javascript">
+    </div>
 
+
+<script type="text/javascript">
 
     function Buscar() {
         $.ajax({

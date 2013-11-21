@@ -16,8 +16,31 @@ namespace ProjetoSeriesGuru.Web.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var filtro = new FiltrarExerciciosModel();
+
+            PreencherGrupamentoCadastro(filtro);
+
+            return View("Index", filtro);
+            
         }
+        private static void PreencherGrupamentoCadastro(FiltrarExerciciosModel filtro)
+        {
+            var repositorioGrupamento = new Grupamentos();
+            var todos = repositorioGrupamento.Todas();
+
+            filtro.TodosGrupamentos = new List<GrupamentoModel>();
+
+            foreach (var grupamento in todos)
+            {
+                filtro.TodosGrupamentos.Add(new GrupamentoModel()
+                {
+                    Id = grupamento.Id,
+                    Nome = grupamento.Nome
+                }
+                   );
+            }
+        }
+
         public ActionResult Cadastrar(ExercicioModel exercicioModel)
         {
             var controller = new ProjetoSeriesGuru.Controllers.ExercicioController();
@@ -25,6 +48,7 @@ namespace ProjetoSeriesGuru.Web.Controllers
             var exercicioDomain = new Exercicio();
             var repositorio = new Grupamentos();
             exercicioDomain.Grupamento = repositorio.Obter(int.Parse(exercicioModel.Grupamento));
+           
             exercicioDomain.Link = new Link();
             exercicioDomain.Nome = exercicioModel.Nome;
             exercicioDomain.Link.Url = exercicioModel.Url;
@@ -33,5 +57,6 @@ namespace ProjetoSeriesGuru.Web.Controllers
             controller.Cadastrar(exercicioDomain);
             return View("Index");
         }
+
     }
 }

@@ -11,27 +11,49 @@ namespace ProjetoSeriesGuru.Web.Controllers
 {
     public class ListarExerciciosController : Controller
     {
-        //
         // GET: /LIstarExercicios/
 
         public ActionResult Index()
         {
-            return View();
+            var filtro = new FiltrarExerciciosModel();
+
+            PreencherGrupamento(filtro);
+
+            return View("Index", filtro);
         }
 
-
-        public ActionResult Buscar(Merda merda)
+        private static void PreencherGrupamento(FiltrarExerciciosModel filtro)
         {
-            var controller = new ProjetoSeriesGuru.Controllers.ExercicioController();
+            var repositorioGrupamento = new Grupamentos();
+            var todos = repositorioGrupamento.Todas();
 
-            
+            filtro.TodosGrupamentos = new List<GrupamentoModel>();
+
+            foreach (var grupamento in todos)
+            {
+               filtro.TodosGrupamentos.Add(new GrupamentoModel()
+                                                {
+                                                    Id = grupamento.Id,
+                                                   Nome = grupamento.Nome
+                                                }
+                  );
+            }
+        }
+
+        public ActionResult Buscar(ExercicioModell exercicioModell)
+        {
             var repositorioo = new Grupamentos();
+
             var repositorioExercicios = new Exercicios();
 
-            Grupamento grupamento = repositorioo.Obter(merda.IdGrupamento);
+            var grupamento = repositorioo.Obter(exercicioModell.IdGrupamento);
+
             List<Exercicio> exercicios = repositorioExercicios.ObterPor(grupamento);
 
-            FiltrarExerciciosModel filtro = new FiltrarExerciciosModel();//instanciei a model
+            var filtro = new FiltrarExerciciosModel();//instanciei a model
+
+            PreencherGrupamento(filtro);
+
             filtro.Exercicios = new List<ExercicioModel>();//instanciei a lista de exerciciosmodel da Model filtrar
 
             foreach (var exercicio in exercicios)//varrendo a lista de exercicios de dominio
@@ -39,7 +61,7 @@ namespace ProjetoSeriesGuru.Web.Controllers
                 filtro.Exercicios.Add(new ExercicioModel()
                                           {
                                               Grupamento = exercicio.Grupamento.Nome,
-                                              Nome =  exercicio.Nome,
+                                              Nome = exercicio.Nome,
                                               Url = exercicio.Link.Url,
                                               Titulo = exercicio.Link.Titulo
                                           });

@@ -7,6 +7,7 @@ namespace ProjetoSeriesGuru.Web.Models
 {
     public class GrupamentoModel
     {
+        public int Id { get; set; }
         public string Nome { get; set; }
     }
 }
