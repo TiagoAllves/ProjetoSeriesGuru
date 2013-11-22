@@ -8,8 +8,8 @@
             <tr>
                 <td>Grupamento </td>
                 <td>Nome </td>
-                <td>Titulo </td>
-                <td>Url </td>
+                <td>Link </td>
+                
             </tr>       
       
             foreach (var exercicio in Model.Exercicios)
@@ -17,8 +17,8 @@
             <tr>
                 <td>@exercicio.Grupamento</td>
                 <td>@exercicio.Nome</td>
-                <td>@exercicio.Titulo</td>
-                <td>@exercicio.Url</td>
+                <td><a href="@exercicio.Url" title="@exercicio.Titulo">@exercicio.Titulo</a></td>
+                @*<td>@exercicio.Url</td>*@
             </tr>
             }
         }

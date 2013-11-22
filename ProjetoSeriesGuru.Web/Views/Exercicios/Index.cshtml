@@ -1,4 +1,5 @@
-﻿@{
+﻿@model ProjetoSeriesGuru.Web.Models.FiltrarExerciciosModel
+@{
     ViewBag.Title = "Cadastro";
 }
 
@@ -11,21 +12,14 @@
         <input type="text" name="Titulo" id="Titulo" />
     <br>
     Url:
-        <input type="text" name="Url" id="Url" />
+        <input type="text" name="Url" id="Url" /> <small>(Example: www.example.com)</small>
     <br>
     Grupamento: 
-        <select id="Grupamento">
 
-            <option value="" selected>Selecione...</option>
-            @if (Model != null && Model.TodosGrupamentos != null )
-            {
-                foreach (var grupamento in Model.TodosGrupamentos)
-                {
-                <option value=@grupamento.Id>@grupamento.Nome</option>
-                }
-            }
-        </select>
+    @Html.Partial("_ComboGrupamentos",Model)
+
     <br>
+
 </div>
 <input type="submit" onclick="Cadastrar();" name="Cadastrar" id="Cadastrar" value="Cadastrar" />
 

@@ -1,0 +1,17 @@
+﻿@model ProjetoSeriesGuru.Web.Models.FiltrarExerciciosModel
+
+<div id="Grupamentos">
+    
+    <select id="Grupamento">
+        <option value="" selected>Selecione...</option>
+
+        @if (Model != null && Model.TodosGrupamentos != null && Model.TodosGrupamentos.Any())
+        {
+            foreach (var grupamento in Model.TodosGrupamentos)
+            {
+                <option value=@grupamento.Id>@grupamento.Nome</option>
+            } 
+        }
+    </select>
+
+ </div>

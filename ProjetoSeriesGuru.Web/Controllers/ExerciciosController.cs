@@ -51,7 +51,7 @@ namespace ProjetoSeriesGuru.Web.Controllers
            
             exercicioDomain.Link = new Link();
             exercicioDomain.Nome = exercicioModel.Nome;
-            exercicioDomain.Link.Url = exercicioModel.Url;
+            exercicioDomain.Link.Url = "Http://" + exercicioModel.Url;
             exercicioDomain.Link.Titulo = exercicioModel.Titulo;
 
             controller.Cadastrar(exercicioDomain);
