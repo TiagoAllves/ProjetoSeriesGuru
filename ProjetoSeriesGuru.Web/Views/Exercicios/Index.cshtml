@@ -6,21 +6,22 @@
 <h2>Cadastrar Exercicios</h2>
 <div>
     Nome:
-        <input type="text" name="Nome" id="Nome" />
+    <input type="text" name="Nome" id="Nome" />
     <br>
     Titulo:
-        <input type="text" name="Titulo" id="Titulo" />
+    <input type="text" name="Titulo" id="Titulo" />
     <br>
     Url:
-        <input type="text" name="Url" id="Url" /> <small>(Example: www.example.com)</small>
+    <input type="text" name="Url" id="Url" />
+    <small>(Example: www.example.com)</small>
     <br>
     Grupamento: 
 
-    @Html.Partial("_ComboGrupamentos",Model)
+    @Html.Partial("_ComboGrupamentos", Model)
 
     <br>
-
 </div>
+
 <input type="submit" onclick="Cadastrar();" name="Cadastrar" id="Cadastrar" value="Cadastrar" />
 
 <input type="submit" name="Limpar" id="Limpar" onclick="LimparCampos();" value="Limpar" />
@@ -64,7 +65,7 @@
         $("#Nome").val("");
         $("#Titulo").val("");
         $("#Url").val("");
-        $("#Agrupamento").val("");
+        $("#Grupamento").val("");
 
     }
 </script>

@@ -163,6 +163,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ExerciciosController.cs" />
+    <Compile Include="Controllers\GrupamentosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LIstarExerciciosController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -290,6 +291,7 @@
     <Content Include="Views\LIstarExercicios\Index.cshtml" />
     <Content Include="Views\LIstarExercicios\_Exercicios.cshtml" />
     <Content Include="Views\Shared\_ComboGrupamentos.cshtml" />
+    <Content Include="Views\Grupamentos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -298,10 +300,6 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProjetoSeriesGuru.Controller\ProjetoSeriesGuru.Controller.csproj">
-      <Project>{14fdb65f-8a2b-4ced-ab2b-28fe94c4031f}</Project>
-      <Name>ProjetoSeriesGuru.Controller</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ProjetoSeriesGuru\ProjetoSeriesGuru.Domain.csproj">
       <Project>{50a74637-2fa9-49c2-b8f3-f24e42fd82d4}</Project>
       <Name>ProjetoSeriesGuru.Domain</Name>

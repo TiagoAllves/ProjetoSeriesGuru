@@ -1,0 +1,59 @@
+﻿@model ProjetoSeriesGuru.Web.Models.FiltrarExerciciosModel
+@{
+    ViewBag.Title = "Cadastro de Grupamentos";
+}
+
+<h2>Cadastro de Grupamentos Musculares</h2>
+<br />
+<div>
+    Nome:
+    <input type="text" name="Nome" id="Nome" />
+
+</div>
+
+<div>
+    <br />
+    <input type="submit" onclick="Cadastrar();" name="Cadastrar" id="Cadastrar" value="Cadastrar" />
+    <input type="submit" onclick="LimparCampos();" name="Limpar" id="Limpar" value="Limpar" />
+</div>
+
+
+<script type="text/javascript">
+
+    function validarCampo() {
+        if ($("#Nome").val() == "") {
+            alert("O campo Nome é obrigatório!");
+            return false;
+        }
+        else
+            return true;
+    }
+
+    function Cadastrar() {
+        if (!validarCampo())
+            return false;
+
+        $.ajax({
+            data: {
+                nome: $("#Nome").val()
+            },
+            url: "/Grupamentos/Cadastrar",
+            type: "POST",
+            success: function (obj) {
+                alert("Cadastro realizado com sucesso!");
+                LimparCampos();
+            },
+            error: function (e, jxr) {
+                alert("Erro");
+            }
+        });
+    }
+
+    function LimparCampos() {
+
+        $("#Nome").val("");
+
+    }
+</script>
+
+

@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoSeriesGuru.Test", "P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoSeriesGuru.Web", "ProjetoSeriesGuru.Web\ProjetoSeriesGuru.Web.csproj", "{5403CCD8-70C4-48EA-BD06-213AC6B6C3F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoSeriesGuru.Controller", "ProjetoSeriesGuru.Controller\ProjetoSeriesGuru.Controller.csproj", "{14FDB65F-8A2B-4CED-AB2B-28FE94C4031F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,10 +25,6 @@ Global
 		{5403CCD8-70C4-48EA-BD06-213AC6B6C3F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5403CCD8-70C4-48EA-BD06-213AC6B6C3F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5403CCD8-70C4-48EA-BD06-213AC6B6C3F7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{14FDB65F-8A2B-4CED-AB2B-28FE94C4031F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{14FDB65F-8A2B-4CED-AB2B-28FE94C4031F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{14FDB65F-8A2B-4CED-AB2B-28FE94C4031F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{14FDB65F-8A2B-4CED-AB2B-28FE94C4031F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
