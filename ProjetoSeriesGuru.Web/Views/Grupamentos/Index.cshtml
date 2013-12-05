@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿@model ProjetoSeriesGuru.Web.Models.FiltrarExerciciosModel
 @{
     ViewBag.Title = "Cadastro de Grupamentos";
@@ -32,6 +33,22 @@
     function Cadastrar() {
         if (!validarCampo())
             return false;
+=======
+﻿@{
+    ViewBag.Title = "Grupamento";
+}
+
+<h2>Cadastro de grupamento</h2>
+
+Nome:
+<input type="text" name="Nome" id="Nome" />
+
+<input type="submit"onclick="Cadastrar();" name="Cadastrar" id="Cadastrar" value="Cadastrar" />
+
+<script type="text/javascript">
+
+    function Cadastrar() {
+>>>>>>> Cadastro de grupamento
 
         $.ajax({
             data: {
@@ -40,6 +57,7 @@
             url: "/Grupamentos/Cadastrar",
             type: "POST",
             success: function (obj) {
+<<<<<<< HEAD
                 alert("Cadastro realizado com sucesso!");
                 LimparCampos();
             },
@@ -57,3 +75,18 @@
 </script>
 
 
+=======
+                alert("Cadastrado efetuado com sucesso.");
+                //LimparCampos();
+            },
+           
+        });
+    }
+    
+    function LimparCampos() {
+
+        $("#Nome").val("");
+    }
+
+</script>
+>>>>>>> Cadastro de grupamento

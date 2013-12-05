@@ -11,13 +11,14 @@ namespace ProjetoSeriesGuru.Web.Controllers
 {
     public class GrupamentosController : Controller
     {
-        //
-        // GET: /Grupamentos/
+
+        // GET: /Grupamento/
 
         public ActionResult Index()
         {
             return View();
         }
+
 
         public ActionResult Cadastrar(GrupamentoModel grupamentoModel)
         {
@@ -29,8 +30,6 @@ namespace ProjetoSeriesGuru.Web.Controllers
             grupamentoRepositorio.Salvar(grupamentoDomain);
 
             return View("Index");
-
         }
-
     }
 }
