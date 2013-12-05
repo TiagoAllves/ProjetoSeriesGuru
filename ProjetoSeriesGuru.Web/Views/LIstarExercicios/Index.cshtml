@@ -4,37 +4,15 @@
     ViewBag.Title = "Consultar Exercícios";
 }
 <div id="DocumentoFiltro">
-<<<<<<< HEAD
     <h2>Consultar Exercícios</h2>
     <small><h3>Busque por grupamento muscular </h3></small>
     <br/>
-   
-=======
-    <h2>Index</h2>
-    
+       <h2>Index</h2>
 
-<<<<<<< HEAD
->>>>>>> Cadastro de grupamento
     Grupamento: @Html.Partial("_ComboGrupamentos", Model)
     <br>
 
     <input type="submit" onclick="Buscar();" name="Filtrar" id="Filtrar" value="Filtrar" />
-=======
-   
-    Grupamento: 
-    <select id="Grupamento">
-        <option value="" selected>Selecione...</option>
-
-        @if (Model != null && Model.TodosGrupamentos != null && Model.TodosGrupamentos.Any())
-        {
-            foreach (var grupamento in Model.TodosGrupamentos)
-            {
-                <option value=@grupamento.Id>@grupamento.Nome</option>
-            } 
-        }
-    </select>
-     <input type="submit" onclick="Buscar();" name="Filtrar" id="Filtrar" value="Filtrar" />
->>>>>>> Cadastro de grupamentos
 
     @Html.Partial("_Exercicios",Model)
     </div>
