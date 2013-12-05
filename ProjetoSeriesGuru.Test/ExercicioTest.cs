@@ -34,6 +34,7 @@ namespace ProjetoSeriesGuru.Test
                 };
                 var repositorio = new Exercicios();
                 repositorio.Salvar(exercicio);
+
             }
         }
     }
