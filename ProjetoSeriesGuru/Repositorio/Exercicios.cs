@@ -18,13 +18,13 @@ namespace ProjetoSeriesGuru.Repositorio
         {
             base.Delete(exercicio);
         }
-        public IList<Exercicios> Todas()
+        public IList<Exercicio> Todas()
         {
-            return base.All<Exercicios>();
+            return base.All<Exercicio>();
         }
-        public Exercicios Obter (int id)
+        public Exercicio Obter (int id)
         {
-            return base.Get<Exercicios>(id);
+            return base.Get<Exercicio>(id);
         }
         public IList<Exercicio> ObterPor(string nome)
         {
