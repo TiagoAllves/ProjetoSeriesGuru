@@ -14,7 +14,11 @@ namespace ProjetoSeriesGuru.Mapeamento
         {
             Id(u => u.Id);
             Map(u => u.Nome);
+            Map(u => u.Sobrenome);
+            Map(u => u.Sexo);
             Map(u => u.Senha);
+            Map(u => u.Email);
+            
         }
     }
 }

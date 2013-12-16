@@ -12,17 +12,20 @@
     <header>
         <div class="content-wrapper">
             <div class="float-left">
-                <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
+                @*<p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>*@
             </div>
             <div class="float-right">
-                 <section id="login">
-                        @Html.Partial("_LoginPartial")
-                    </section>
+                 @*<section id="login">*@
+                        @*@Html.Partial("_LoginPartial")*@
+                    @*</section>*@
                 <nav>
                         <ul id="menu">
                             <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            <li>@Html.ActionLink("Sobre", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
+                            <li>@Html.ActionLink("Cadastro de grupamento", "Index", "Grupamentos")</li>
+                            <li>@Html.ActionLink("Cadastro de exercicíos", "Index", "Exercicios")</li>
+                            <li>@Html.ActionLink("Consultar exercicíos", "Index", "ListarExercicios")</li>
                         </ul>
                 </nav>
             </div>

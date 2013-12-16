@@ -166,7 +166,7 @@
     <Compile Include="Controllers\GrupamentosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LIstarExerciciosController.cs" />
-    <Compile Include="Controllers\PessoaController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -175,7 +175,7 @@
     <Compile Include="Models\ExercicioModel.cs" />
     <Compile Include="Models\FiltarrExercicioModel.cs" />
     <Compile Include="Models\GrupamentoModel.cs" />
-    <Compile Include="Models\PessoaModel.cs" />
+    <Compile Include="Models\UsuarioModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -294,7 +294,7 @@
     <Content Include="Views\LIstarExercicios\_Exercicios.cshtml" />
     <Content Include="Views\Shared\_ComboGrupamentos.cshtml" />
     <Content Include="Views\Grupamentos\Index.cshtml" />
-    <Content Include="Views\Pessoa\Index.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

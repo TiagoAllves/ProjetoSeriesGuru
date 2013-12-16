@@ -11,6 +11,9 @@ namespace ProjetoSeriesGuru.Entidades
     {
         public virtual int Id { get; set; }
         public virtual string Nome { get; set; }
+        public virtual string Sobrenome { get; set; }
+        public virtual string Sexo { get; set; }
         public virtual string Senha { get; set; }
+        public virtual string Email { get; set; }
     }
 }

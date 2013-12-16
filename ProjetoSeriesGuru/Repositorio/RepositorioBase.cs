@@ -47,8 +47,8 @@ namespace ProjetoSeriesGuru.Repositorio
 
         public virtual void Save(IRaizDeAgregacao<int> root)
         {
-            var transaction = Session.BeginTransaction(IsolationLevel.ReadUncommitted);
-            Session.SaveOrUpdate(root);
+            var transaction = Session.BeginTransaction();
+            Session.Save(root);
             transaction.Commit();
         }
 
