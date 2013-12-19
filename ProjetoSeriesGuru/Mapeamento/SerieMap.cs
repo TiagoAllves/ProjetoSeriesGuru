@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using FluentNHibernate.Mapping;
+using ProjetoSeriesGuru.Entidades;
+
+namespace ProjetoSeriesGuru.Mapeamento
+{
+    public class SerieMap : ClassMap<Serie>
+    {
+         SerieMap()
+         {
+             Id(s => s.Id);
+             Map(s => s.Nome);
+             Map(s => s.Objetivo);
+             Map(s => s.Tipo);
+             References(s => s.Exercicio);
+         }
+    }
+}

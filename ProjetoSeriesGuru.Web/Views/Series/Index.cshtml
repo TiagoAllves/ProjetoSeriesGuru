@@ -1,0 +1,17 @@
+﻿@model ProjetoSeriesGuru.Web.Models.SerieModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Series guru</h2>
+
+<select id="Series">
+    <option value="" selected>Selecione...</option>
+</select>
+<br/>
+<br/>
+<input type="submit" name="Adicionar" id="Adicionar" value="Adicionar"/>
+ 
+@Html.Partial("_CadastroDeSeries", Model)
+
+

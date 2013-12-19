@@ -33,7 +33,7 @@ namespace ProjetoSeriesGuru.Web.Controllers
             {
                filtro.TodosGrupamentos.Add(new GrupamentoModel()
                                                 {
-                                                    Id = grupamento.Id,
+                                                   Id = grupamento.Id,
                                                    Nome = grupamento.Nome
                                                 }
                   );

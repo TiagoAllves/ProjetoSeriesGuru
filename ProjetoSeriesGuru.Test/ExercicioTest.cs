@@ -24,9 +24,9 @@ namespace ProjetoSeriesGuru.Test
                     Url = "www.musculaçaodoida.com"
                 };
                 var grupamento = new Grupamento
-                {
+                {            
                     Nome = "Braço" + i,
-                };
+                }; 
                 var exercicio = new Exercicio
                 {
                     Nome = "Squat" + i,
