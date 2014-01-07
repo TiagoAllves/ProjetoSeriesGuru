@@ -17,8 +17,8 @@
 </div>
 <br />
 <div id="Editarr">
-<h2>Editar Séries</h2>
-<br />
+    <h2>Editar Séries</h2>
+    <br />
 
     <input type="submit" onclick="Editar();" name="Editar" id="Editarserie" value="Editar">
 
@@ -27,27 +27,16 @@
         <option id="optSerie" value="" onchange="Editar();" selected>Selecione...</option>
     </select>
 </div>
-<br />
 
 <script type="text/javascript">
 
     function Editar() {
         $("#Editarr").show();
         $("#cadastro").hide();
-        //$.ajax({
-        //    //Ajax que chama a partial de edicao, passando o id serie
-        //});
     }
 
     function Adicionar() {
         $("#cadastro").show();
         $("#Editarr").hide();
     }
-<<<<<<< HEAD
-    
-    function Adicionar() {
-        $("#cadastro").show();
-    }
-=======
->>>>>>> alteracao de tela de series
 </script>
