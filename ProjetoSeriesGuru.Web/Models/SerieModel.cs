@@ -12,9 +12,4 @@ namespace ProjetoSeriesGuru.Web.Models
         public string Tipo { get; set; }
         public string Exercicio { get; set; }
     }
-
-    public class FiltrarSeriesModel
-    {
-        public IList<ExercicioModel> TodosExercicios { get; set; }
-    }
 }

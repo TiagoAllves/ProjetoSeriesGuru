@@ -1,17 +1,38 @@
-﻿@model ProjetoSeriesGuru.Web.Models.SerieModel
+﻿@model ProjetoSeriesGuru.Web.Models.FiltrarSeriesModel
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Series";
 }
 
 <h2>Series guru</h2>
 
 <select id="Series">
-    <option value="" selected>Selecione...</option>
+    <option id="optSerie" value="" onchange="Editar();" selected>Selecione...</option>
 </select>
-<br/>
-<br/>
-<input type="submit" name="Adicionar" id="Adicionar" value="Adicionar"/>
- 
-@Html.Partial("_CadastroDeSeries", Model)
+<br />
+<br />
+<div id="SeriesFiltro">
+    <input type="submit"name="Adicionar" onclick="Adicionar();" id="Adicionar" value="Adicionar" />
+    
+    <div id="cadastro" style="display:none">
+    @Html.Partial("_CadastroDeSeries", Model)    
+    </div>
+    <div id="Editar">
+        
+    </div>
+    
+</div>
 
+<script type="text/javascript">
 
+    function Editar() {
+        $("#cadastro").hide();
+        $.ajax({
+           //Ajax que chama a partial de edicao, passando o id serie
+        });
+  
+    }
+    
+    function Adicionar() {
+        $("#cadastro").show();
+    }
+</script>

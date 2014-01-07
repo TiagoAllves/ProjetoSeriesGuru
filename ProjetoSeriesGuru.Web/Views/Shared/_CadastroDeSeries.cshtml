@@ -1,29 +1,56 @@
 ﻿@model ProjetoSeriesGuru.Web.Models.FiltrarSeriesModel
 <h2>Cadastro de series</h2>
 
-
-Nome:
-<input type="text" name="Nome" id="name"/>
-<br/>
-Objetivo:
-<input type="text"name="Objetivo"id="Objetivo"/>
-<br/>
-Tipo:
-<select id="">
-    <option value="" selected>Selecione...</option>
-</select>
 <div id="Series">
-<select id="Serie">
-    <option value="" selected>Selecione...</option>
-    
-    @if (Model != null && Model.TodosExercicios != null && Model.TodosExercicios.Any())
-    {
-        foreach (var exercicio in Model.TodosExercicios)
+    Nome:
+    <input type="text" name="Nome" id="name" />
+    <br />
+    Objetivo:
+    <input type="text" name="Objetivo" id="Objetivo" />
+    <br />
+    Tipo:
+    <select id="">
+        <option value="" selected>Selecione...</option>
+    </select>
+
+    Exercicios:
+    <select id="Exercicios">
+        <option value="" selected>Selecione...</option>
+
+        @if (Model != null && Model.TodosExercicios != null && Model.TodosExercicios.Any())
         {
-            <option value=@exercicio.Id>@exercicio.Nome</option>
-        } 
-    }
-    <option value> </option>
+            foreach (var exercicio in Model.TodosExercicios)
+            {
+                <option value=@exercicio.Id>@exercicio.Nome</option>
+            }
+        }
+        <option value></option>
+
+    </select>
     
-</select>
-    </div>
+
+    <input type="submit" onclick="Cadastrar();" name="Cadastrar" id="Cadastrar" value="Cadastrar" />
+</div> 
+<script type="text/javascript">
+
+    function Cadastrar() {
+        $.ajax({
+            data: {
+                nome: $("#Nome").val(),
+                Objetivo: $("#Objetivo").val(),
+                Tipo: $("#Tipo").val(),
+                Exercicios: $("#Exercicios").val()
+            },
+            url: "Series/Cadastrar",
+            type: "POST",
+            success: function (obj) {
+                alert("Cadastrado efetuado com sucesso.");
+
+            },
+            error: function (e, jxr) {
+                alert("Erro.");
+            }
+        });
+    }
+
+</script>

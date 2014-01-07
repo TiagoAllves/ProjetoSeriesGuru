@@ -175,6 +175,7 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ExercicioModel.cs" />
     <Compile Include="Models\FiltarrExercicioModel.cs" />
+    <Compile Include="Models\FiltrarSeriesModel.cs" />
     <Compile Include="Models\GrupamentoModel.cs" />
     <Compile Include="Models\SerieModel.cs" />
     <Compile Include="Models\UsuarioModel.cs" />
