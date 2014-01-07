@@ -13,6 +13,6 @@ namespace ProjetoSeriesGuru.Entidades
         public virtual string Nome { get; set; }
         public virtual string Objetivo { get; set; }
         public virtual string Tipo { get; set; }
-        public virtual Exercicio Exercicio { get; set; }
+        public virtual List<Exercicio> ListaExercicio { get; set; }
     }
 } 

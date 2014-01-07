@@ -25,7 +25,7 @@ namespace ProjetoSeriesGuru.Web.Controllers
 
         public void PreencherExercicio(FiltrarSeriesModel filtro)
         {
-            var repositorio = new Series();
+            var repositorio = new Exercicios();
             var todos = repositorio.Todas();
             filtro.TodosExercicios = new List<ExercicioModel>();
 
@@ -44,11 +44,10 @@ namespace ProjetoSeriesGuru.Web.Controllers
               var serie = new Serie();
               var repositorio = new Series();
 
-              serie.Exercicio = new Exercicio();
+              serie.ListaExercicio = new List<Exercicio>();
               serie.Nome = serieModel.Nome;
               serie.Objetivo = serieModel.Objetivo;
               serie.Tipo = serieModel.Tipo;
-              serie.Exercicio.Nome = serieModel.Nome;
               repositorio.Salvar(serie);
 
               return View("Index");
