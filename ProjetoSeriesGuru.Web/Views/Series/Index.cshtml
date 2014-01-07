@@ -3,36 +3,51 @@
     ViewBag.Title = "Series";
 }
 
-<h2>Series guru</h2>
+<h2>Adicionar Series</h2>
 
-<select id="Series">
-    <option id="optSerie" value="" onchange="Editar();" selected>Selecione...</option>
-</select>
-<br />
-<br />
 <div id="SeriesFiltro">
-    <input type="submit"name="Adicionar" onclick="Adicionar();" id="Adicionar" value="Adicionar" />
-    
-    <div id="cadastro" style="display:none">
-    @Html.Partial("_CadastroDeSeries", Model)    
+    <input type="submit" name="Adicionar" onclick="Adicionar();" id="Adicionar" value="Adicionar" />
+
+    <div id="cadastro" style="display: none">
+        @Html.Partial("_CadastroDeSeries", Model)
     </div>
     <div id="Editar">
-        
     </div>
-    
+
 </div>
+<br />
+<div id="Editarr">
+<h2>Editar Séries</h2>
+<br />
+
+    <input type="submit" onclick="Editar();" name="Editar" id="Editarserie" value="Editar">
+
+
+    <select id="Series">
+        <option id="optSerie" value="" onchange="Editar();" selected>Selecione...</option>
+    </select>
+</div>
+<br />
 
 <script type="text/javascript">
 
     function Editar() {
+        $("#Editarr").show();
         $("#cadastro").hide();
-        $.ajax({
-           //Ajax que chama a partial de edicao, passando o id serie
-        });
-  
+        //$.ajax({
+        //    //Ajax que chama a partial de edicao, passando o id serie
+        //});
     }
+
+    function Adicionar() {
+        $("#cadastro").show();
+        $("#Editarr").hide();
+    }
+<<<<<<< HEAD
     
     function Adicionar() {
         $("#cadastro").show();
     }
+=======
+>>>>>>> alteracao de tela de series
 </script>
