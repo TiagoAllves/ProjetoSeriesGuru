@@ -19,8 +19,10 @@ namespace ProjetoSeriesGuru.Web.Controllers
             var filtro = new FiltrarSeriesModel();
 
             PreencherExercicio(filtro);
+            Preencher(filtro);
 
             return View("Index", filtro);
+
         }
 
         public void PreencherExercicio(FiltrarSeriesModel filtro)
@@ -39,18 +41,38 @@ namespace ProjetoSeriesGuru.Web.Controllers
                     );
             }
         }
-          public ActionResult Cadastrar(SerieModel serieModel)
-          {
-              var serie = new Serie();
-              var repositorio = new Series();
 
-              serie.ListaExercicio = new List<Exercicio>();
-              serie.Nome = serieModel.Nome;
-              serie.Objetivo = serieModel.Objetivo;
-              serie.Tipo = serieModel.Tipo;
-              repositorio.Salvar(serie);
+        public void Preencher(FiltrarSeriesModel filtro)
+        {
+            var repositorio = new Tipos();
+            var todos = repositorio.Todas();
 
-              return View("Index");
-          }
+            filtro.TodosTipos = new List<TipoModel>();
+
+            foreach (var tipo in todos)
+            {
+                filtro.TodosTipos.Add(new TipoModel()
+                {
+                    Id = tipo.Id,
+                    Nome = tipo.Nome
+                }
+                   );
+            }
+
+        }
+
+        public ActionResult Cadastrar(SerieModel serieModel)
+        {
+            var serie = new Serie();
+            var tipo = new Tipo();
+            var repositorio = new Series();
+
+            serie.ListaExercicio = new List<Exercicio>();
+            serie.Nome = serieModel.Nome;
+            serie.Objetivo = serieModel.Objetivo;
+            repositorio.Salvar(serie);
+
+            return View("Index");
+        }
     }
 }

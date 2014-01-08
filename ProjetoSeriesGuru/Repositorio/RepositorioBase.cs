@@ -111,7 +111,7 @@ namespace ProjetoSeriesGuru.Repositorio
             ISession currentSession;
             lock (SyncObj)
                 currentSession = Factory.OpenSession();
-            return currentSession;
+            return currentSession; 
         }
 
         public static ISessionFactory CreateSessionFactory()
@@ -120,7 +120,8 @@ namespace ProjetoSeriesGuru.Repositorio
             Fluently.Configure().Database(MsSqlConfiguration.MsSql2008.ConnectionString(c => c
             .FromAppSetting("connection")
             )).Mappings(m => m.FluentMappings.AddFromAssemblyOf<ExercicioMap>()).BuildSessionFactory();
-        }
+           
+        }            
 
         #endregion
     }
