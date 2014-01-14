@@ -3,92 +3,64 @@
 
 <div id="Series">
     Nome:
-    <input type="text" name="Nome" id="name" />
+    <input type="text" name="Nome" id="Nome" />
     <br />
     Objetivo:
     <input type="text" name="Objetivo" id="Objetivo" />
 <br />
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-
-    
-    
-
 Tipo:
-    <select id="Tipo">
-        <option value="" selected>Selecione...</option>
+<select id="Tipo">
+    <option value="" selected>Selecione...</option>
         
-         @if (Model != null && Model.TodosTipos != null && Model.TodosTipos.Any())
-         {
-             foreach (var tipo in Model.TodosTipos)
-            {
-                <option value=@tipo.Id>@tipo.Nome</option>
-            } 
-         }
-        <option value> </option>
-    </select>
-<br />
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    @if (Model != null && Model.TodosTipos != null && Model.TodosTipos.Any())
+    {
+        foreach (var tipo in Model.TodosTipos)
+        {
+            <option value=@tipo.Id>@tipo.Nome</option>
+        } 
+    }
+    <option value> </option>
+</select>
+    </div>
+<br />    
 
-    
-    
-    
-
-    
-    
-    
-
-
-Exercicios:
-    <form>
+Exercicios: 
+    <form  id="formCheck">
         @if (Model != null && Model.TodosExercicios != null && Model.TodosExercicios.Any())
         {
             foreach (var exercicio in Model.TodosExercicios)
             {
-            <input type="checkbox" name="exercicio" value="nome do exercicio">@exercicio.Nome
+            <input type="checkbox" name="exercicio" value="@exercicio.Id">@exercicio.Nome
             }
         }
 
     </form>
 
     <input type="submit" onclick="Cadastrar();" name="Cadastrar" id="Cadastrar" value="Cadastrar" />
-</div>
+
 <script type="text/javascript">
 
     function Cadastrar() {
+        
+        var idsDosExercicios = new Array();
+        $("input:checkbox").each(function (chk) {
+            if (this.checked)
+             idsDosExercicios.push(this.value);
+        });
+        
         $.ajax({
+            
+           
+            traditional: true,
+            url: "Series/Cadastrar",
+            type: "POST",
             data: {
                 nome: $("#Nome").val(),
                 Objetivo: $("#Objetivo").val(),
                 Tipo: $("#Tipo").val(),
-                Exercicios: $("#Exercicios").val()
+                Exercicios: idsDosExercicios
             },
-            url: "Series/Cadastrar",
-            type: "POST",
             success: function (obj) {
                 alert("Cadastrado efetuado com sucesso.");
 

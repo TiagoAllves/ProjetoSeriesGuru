@@ -16,23 +16,23 @@ namespace ProjetoSeriesGuru.Web.Controllers
 
         public ActionResult Index()
         {
-            var filtro = new FiltrarSeriesModel();
+            var filtroDeSeries = new FiltrarSeriesModel();
 
-            PreencherExercicio(filtro);
-            
+            PreencherExercicio(filtroDeSeries);
+            PreencherTipo(filtroDeSeries);
 
-            return View("Index", filtro);
+            return View("Index", filtroDeSeries);
         }
 
-        public void PreencherExercicio(FiltrarSeriesModel filtro)
+        public void PreencherExercicio(FiltrarSeriesModel filtroDeSeries)
         {
             var repositorio = new Exercicios();
             var todos = repositorio.Todas();
-            filtro.TodosExercicios = new List<ExercicioModel>();
+            filtroDeSeries.TodosExercicios = new List<ExercicioModel>();
 
             foreach (var exercicio in todos)
             {
-                filtro.TodosExercicios.Add(new ExercicioModel()
+                filtroDeSeries.TodosExercicios.Add(new ExercicioModel()
                                                {
                                                    Id = exercicio.Id,
                                                    Nome = exercicio.Nome
@@ -40,16 +40,33 @@ namespace ProjetoSeriesGuru.Web.Controllers
                     );
             }
         }
-        
+        public void PreencherTipo(FiltrarSeriesModel filtroDeSeries)
+        {
+            var repositorio = new Tipos();
+            var todos = repositorio.Todas();
+            filtroDeSeries.TodosTipos = new List<TipoModel>();
+
+            foreach (var tipo in todos)
+            {
+                filtroDeSeries.TodosTipos.Add(new TipoModel()
+                                                  {
+                                                      Id = tipo.Id,
+                                                      Nome = tipo.Nome
+                                                  }
+                    );
+            }
+        }
+
 
         public ActionResult Cadastrar(SerieModel serieModel)
         {
             var serie = new Serie();
-            
-
+            var repositorioTipo = new Tipos();
             var repositorio = new Series();
 
-            serie.ListaExercicio = new List<Exercicio>();
+            serie.ListaExercicio = new List<Exercicio>(); 
+
+            serie.Tipo = repositorioTipo.Obter(int.Parse(serieModel.Tipo));
             serie.Nome = serieModel.Nome;
             serie.Objetivo = serieModel.Objetivo;
             repositorio.Salvar(serie);

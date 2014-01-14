@@ -20,6 +20,7 @@ namespace ProjetoSeriesGuru.Web.Controllers
             var filtro = new FiltrarExerciciosModel();
 
             PreencherGrupamentoCadastro(filtro);
+            
 
             return View("Index", filtro);
 

@@ -36,5 +36,11 @@ namespace ProjetoSeriesGuru.Repositorio
             criterio.Add(Restrictions.Like("Nome", nome));
             return criterio.List<Serie>();
         }
+        public List<Serie> ObterPor(Tipo tipo)
+        {
+            var criterio = Session.CreateCriteria<Serie>();
+            criterio.Add(Restrictions.Eq("Tipo", tipo));
+            return criterio.List<Serie>().ToList();
+        }
     }
 }
