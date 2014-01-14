@@ -1,0 +1,18 @@
+﻿@model ProjetoSeriesGuru.Web.Models.FiltrarSeriesModel
+
+<div id="Tipos">
+
+<select id="Tipo">
+    <option value="" selected>Selecione...</option>
+        
+    @if (Model != null && Model.TodosTipos != null && Model.TodosTipos.Any())
+    {
+        foreach (var tipo in Model.TodosTipos)
+        {
+            <option value=@tipo.Id>@tipo.Nome</option>
+        } 
+    }
+    <option value> </option>
+</select>
+    </div>
+<br />    

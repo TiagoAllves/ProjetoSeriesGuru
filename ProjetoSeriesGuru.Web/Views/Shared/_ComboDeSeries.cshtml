@@ -1,0 +1,18 @@
+﻿@model ProjetoSeriesGuru.Web.Models.FiltrarSeriesModel
+
+<div id="SeriesCadastrada">
+    <select id="Series">
+        <option id="optSerie" value="" onchange="Editar();" selected>
+        Selecione...
+    
+     @if (Model != null && Model.TodasSeries != null && Model.TodasSeries.Any())
+     {
+         foreach (var serie in Model.TodasSeries)
+         {
+         <option value=@serie.Id>@serie.Nome</option>
+         }
+     }
+        <option value></option>
+    </select>
+
+</div>

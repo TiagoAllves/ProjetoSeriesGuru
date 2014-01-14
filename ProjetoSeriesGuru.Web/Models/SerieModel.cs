@@ -8,9 +8,10 @@ namespace ProjetoSeriesGuru.Web.Models
     [Serializable]
     public class SerieModel
     {
+        public int Id { get; set; }
         public string Nome { get; set; }
         public string Objetivo { get; set; }
         public string Tipo { get; set; }
-        public virtual List<string> Exercicios { get; set; }
+        public virtual List<string> listaDeExercicios { get; set; }
     }
 }

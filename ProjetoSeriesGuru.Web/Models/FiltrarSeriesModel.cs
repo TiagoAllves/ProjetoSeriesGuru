@@ -10,5 +10,7 @@ namespace ProjetoSeriesGuru.Web.Models
         public IList<ExercicioModel> TodosExercicios { get; set; }
 
         public IList<TipoModel> TodosTipos { get; set; }
+
+        public IList<SerieModel> TodasSeries { get; set; } 
     }
 }

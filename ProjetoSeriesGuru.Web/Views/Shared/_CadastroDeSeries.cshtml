@@ -7,24 +7,14 @@
     <br />
     Objetivo:
     <input type="text" name="Objetivo" id="Objetivo" />
-<br />
-    
-Tipo:
-<select id="Tipo">
-    <option value="" selected>Selecione...</option>
-        
-    @if (Model != null && Model.TodosTipos != null && Model.TodosTipos.Any())
-    {
-        foreach (var tipo in Model.TodosTipos)
-        {
-            <option value=@tipo.Id>@tipo.Nome</option>
-        } 
-    }
-    <option value> </option>
-</select>
-    </div>
-<br />    
+    <br>
+    Tipo: 
 
+    @Html.Partial("_TipoDeSeries", Model)
+
+    <br>
+
+    </div>
 Exercicios: 
     <form  id="formCheck">
         @if (Model != null && Model.TodosExercicios != null && Model.TodosExercicios.Any())
@@ -38,7 +28,7 @@ Exercicios:
     </form>
 
     <input type="submit" onclick="Cadastrar();" name="Cadastrar" id="Cadastrar" value="Cadastrar" />
-
+    
 <script type="text/javascript">
 
     function Cadastrar() {

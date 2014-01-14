@@ -302,6 +302,8 @@
     <Content Include="Views\Series\Index.cshtml" />
     <Content Include="Views\Shared\_CadastroDeSeries.cshtml" />
     <Content Include="Views\Series\_EditarSeries.cshtml" />
+    <Content Include="Views\Shared\_TipoDeSeries.cshtml" />
+    <Content Include="Views\Shared\_ComboDeSeries.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
