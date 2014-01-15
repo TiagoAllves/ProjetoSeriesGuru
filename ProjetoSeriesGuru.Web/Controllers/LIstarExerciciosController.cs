@@ -15,7 +15,7 @@ namespace ProjetoSeriesGuru.Web.Controllers
 
         public ActionResult Index()
         {
-            var filtro = new FiltrarExerciciosModel();
+            var filtro = new FiltrarExerciciosModel();                             
 
             PreencherGrupamento(filtro);
 

@@ -67,7 +67,7 @@ namespace ProjetoSeriesGuru.Web.Controllers
             {
                 filtroDeSeries.TodasSeries.Add(new SerieModel()
                                                    {
-                                                       Id = serie.Id,
+                                                       SeriesId = serie.Id,
                                                        Nome = serie.Nome
                                                    }
                     );
@@ -79,13 +79,18 @@ namespace ProjetoSeriesGuru.Web.Controllers
             var serie = new Serie();
             var repositorioTipo = new Tipos();
             var repositorio = new Series();
-
+            var repositorioExercicios = new Exercicios();
             serie.ListaExercicio = new List<Exercicio>();
-            
+            foreach (var Id in serieModel.listaDeExercicios)
+            {
+               var exercicio = repositorioExercicios.Obter(int.Parse(Id));
+               serie.ListaExercicio.Add(exercicio);
+            }
+            // eu tenho que ir no banco e pegar os exercicios pelo seu Id, e salva-lo na minha lista de exercicios , pra que ele fique vinculado a ela.
             serie.Tipo = repositorioTipo.Obter(int.Parse(serieModel.Tipo));
             serie.Nome = serieModel.Nome;
             serie.Objetivo = serieModel.Objetivo;
-            
+
             repositorio.Salvar(serie);
 
             return View("Index");
