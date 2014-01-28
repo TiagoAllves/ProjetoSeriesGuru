@@ -16,7 +16,7 @@ namespace ProjetoSeriesGuru.Mapeamento
              Map(s => s.Nome);
              Map(s => s.Objetivo);
              References(s => s.Tipo);
-             HasMany(s => s.ListaExercicio).Cascade.All();
+             HasMany(s => s.ListaExercicios).Cascade.All();
          }
     }
 }

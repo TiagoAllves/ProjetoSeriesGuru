@@ -10,7 +10,7 @@ namespace ProjetoSeriesGuru.Mapeamento
 {
     public class ExercicioMap : ClassMap<Exercicio>
     {
-        private ExercicioMap()
+         ExercicioMap()
         {
             Id(e => e.Id);
             Map(e => e.Nome);

@@ -80,19 +80,18 @@ namespace ProjetoSeriesGuru.Web.Controllers
             var repositorioTipo = new Tipos();
             var repositorio = new Series();
             var repositorioExercicios = new Exercicios();
-            serie.ListaExercicio = new List<Exercicio>();
-            foreach (var Id in serieModel.listaDeExercicios)
-            {
-               var exercicio = repositorioExercicios.Obter(int.Parse(Id));
-               serie.ListaExercicio.Add(exercicio);
-            }
-            // eu tenho que ir no banco e pegar os exercicios pelo seu Id, e salva-lo na minha lista de exercicios , pra que ele fique vinculado a ela.
+            serie.ListaExercicios = new List<Exercicio>();
             serie.Tipo = repositorioTipo.Obter(int.Parse(serieModel.Tipo));
             serie.Nome = serieModel.Nome;
             serie.Objetivo = serieModel.Objetivo;
 
+           
+            foreach (var Id in serieModel.Exercicios)
+            {
+               var exercicio = repositorioExercicios.Obter(int.Parse(Id));
+               serie.ListaExercicios.Add(exercicio);
+            }
             repositorio.Salvar(serie);
-
             return View("Index");
         }
     }

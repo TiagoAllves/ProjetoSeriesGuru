@@ -10,7 +10,7 @@ namespace ProjetoSeriesGuru.Mapeamento
 {
     public class UsuarioMap: ClassMap<Usuario>
     {
-        private UsuarioMap()
+         UsuarioMap()
         {
             Id(u => u.Id);
             Map(u => u.Nome);
