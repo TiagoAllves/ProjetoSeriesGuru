@@ -80,7 +80,7 @@ namespace ProjetoSeriesGuru.Web.Controllers
             var repositorioTipo = new Tipos();
             var repositorio = new Series();
             var repositorioExercicios = new Exercicios();
-            serie.ListaExercicios = new List<Exercicio>();
+            serie.Exercicios = new List<Exercicio>();
             serie.Tipo = repositorioTipo.Obter(int.Parse(serieModel.Tipo));
             serie.Nome = serieModel.Nome;
             serie.Objetivo = serieModel.Objetivo;
@@ -89,7 +89,7 @@ namespace ProjetoSeriesGuru.Web.Controllers
             foreach (var Id in serieModel.Exercicios)
             {
                var exercicio = repositorioExercicios.Obter(int.Parse(Id));
-               serie.ListaExercicios.Add(exercicio);
+               serie.Exercicios.Add(exercicio);
             }
             repositorio.Salvar(serie);
             return View("Index");

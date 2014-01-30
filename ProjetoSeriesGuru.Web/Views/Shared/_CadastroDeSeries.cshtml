@@ -12,36 +12,77 @@
 
     @Html.Partial("_TipoDeSeries", Model)
 
-    <br>
+     </div>
+   
 
-    </div>
-Exercicios: 
-    <form  id="formCheck">
-        @if (Model != null && Model.TodosExercicios != null && Model.TodosExercicios.Any())
+<input type="submit"onclick="efeito();" name="exercicios"/id="exercicios"value="exercicios">
+<br>
+<div id="nomeDaDiv" style="display:none;">
+
+    <table>
+
+        @if (Model != null && Model.TodosExercicios != null && Model.TodosExercicios.Count > 0)
         {
+
+
             foreach (var exercicio in Model.TodosExercicios)
             {
-            <input type="checkbox" name="exercicio" value="@exercicio.Id">@exercicio.Nome
+         
+                <tr>
+                    <td width="150" bgcolor="gray">
+                        <input type="checkbox" name="exercicio" value="@exercicio.Id">@exercicio.Nome</td>
+
+                </tr>
             }
         }
 
-    </form>
-
-    <input type="submit" onclick="Cadastrar();" name="Cadastrar" id="Cadastrar" value="Cadastrar" />
+    </table>
     
+</div>
+
+
+
+<input type="submit" onclick="Cadastrar();" name="Cadastrar" id="Cadastrar" value="Cadastrar" />
+
+<input type="submit" name="Limpar" id="Limpar" onclick="LimparCampos();" value="Limpar" />
+    
+    
+
 <script type="text/javascript">
 
+
+    function validarCampo() {
+        if ($("#Tipo").val() == "") {
+            alert("Todos Campos são obrigatórios!");
+            return false;
+        } else if ($("#Nome").val() == "") {
+            alert("Todos Campos são obrigatórios!");
+            return false;       
+        }
+        else if ($("#Objetivo").val() == "") {
+            alert("Todos Campos são obrigatórios!");
+            return false;
+        }
+        else if (this.checked == null) {
+            alert("Todos Campos são obrigatórios!");
+            return false;
+        }
+        else
+            return true;
+    }
+
     function Cadastrar() {
-        
+        if (!validarCampo())
+            return false;
         var idsDosExercicios = new Array();
         $("input:checkbox").each(function (chk) {
             if (this.checked)
-             idsDosExercicios.push(this.value);
+                idsDosExercicios.push(this.value);
         });
-        
+
         $.ajax({
-            
-           
+
+
             traditional: true,
             url: "Series/Cadastrar",
             type: "POST",
@@ -53,12 +94,40 @@ Exercicios:
             },
             success: function (obj) {
                 alert("Cadastrado efetuado com sucesso.");
-
+                LimparCampos();
             },
             error: function (e, jxr) {
                 alert("Erro.");
             }
         });
+    }
+    function LimparCampos() {
+
+        $("#Nome").val("");
+        $("#Objetivo").val("");
+        $("#Tipo").val("");
+        
+        $("input:checkbox").each(function (chk) {
+            
+            this.checked = false;
+        });
+       
+    }
+   
+
+    function efeito() {
+
+        var mostrar_div = document.getElementById("nomeDaDiv");
+
+       
+        if (mostrar_div.style.display == 'none') {
+            
+            mostrar_div.style.display = 'block';
+            
+        } else {
+            
+            mostrar_div.style.display = 'none';
+        }
     }
 
 </script>
